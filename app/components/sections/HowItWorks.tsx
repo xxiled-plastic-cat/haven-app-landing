@@ -140,33 +140,81 @@ export default function HowItWorks() {
           ))}
         </div>
 
-        {/* Bottom CTA */}
+        {/* Bottom CTA with Image */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
-          className="text-center mt-16"
+          className="mt-20 -mx-4 md:-mx-8"
         >
-          <p 
-            className="text-lg mb-6"
-            style={{ color: 'var(--text-body)' }}
-          >
-            Ready to start earning more on your savings?
-          </p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={scrollToEmailSignup}
-            className="px-8 py-4 rounded-3xl font-semibold text-lg transition-all duration-200"
+          <div 
+            className="rounded-3xl overflow-hidden p-8 md:p-12 lg:p-16"
             style={{ 
-              backgroundColor: 'var(--text-header)',
-              color: 'var(--bg-main)',
-              boxShadow: '4px 4px 8px rgba(0,0,0,0.2), -2px -2px 6px var(--bg-main)'
+              backgroundColor: 'var(--bg-lighter)',
+              boxShadow: '8px 8px 16px rgba(0,0,0,0.1), -4px -4px 12px var(--bg-main)'
             }}
           >
-            Get Started Today
-          </motion.button>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+              {/* Image Section */}
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="order-2 lg:order-1"
+              >
+                <div 
+                  className="aspect-video rounded-2xl overflow-hidden"
+                  style={{ 
+                    backgroundColor: 'var(--bg-main)',
+                    boxShadow: 'inset 4px 4px 8px rgba(0,0,0,0.1), inset -2px -2px 6px var(--bg-lighter)'
+                  }}
+                >
+                  <img 
+                    src="/mockup-photo.png"
+                    alt="Haven app interface mockup"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </motion.div>
+
+              {/* Content Section */}
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+                className="order-1 lg:order-2 text-center lg:text-left"
+              >
+                <h3 
+                  className="text-2xl md:text-3xl lg:text-4xl font-bold font-serif mb-4"
+                  style={{ color: 'var(--text-header)' }}
+                >
+                  Ready to start earning more on your savings?
+                </h3>
+                <p 
+                  className="text-lg md:text-xl mb-8 max-w-xl mx-auto lg:mx-0"
+                  style={{ color: 'var(--text-body)' }}
+                >
+                  Join thousands of users who are already growing their wealth with Haven's simple, secure platform.
+                </p>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={scrollToEmailSignup}
+                  className="px-8 py-4 rounded-3xl font-semibold text-lg transition-all duration-200"
+                  style={{ 
+                    backgroundColor: 'var(--text-header)',
+                    color: 'var(--bg-main)',
+                    boxShadow: '4px 4px 8px rgba(0,0,0,0.2), -2px -2px 6px var(--bg-main)'
+                  }}
+                >
+                  Get Started Today
+                </motion.button>
+              </motion.div>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>
