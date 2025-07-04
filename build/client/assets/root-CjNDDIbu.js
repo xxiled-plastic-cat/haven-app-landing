@@ -1,0 +1,10 @@
+import{r as a,j as t}from"./index-BZpZPwHN.js";import{S as e,T as h}from"./useTheme-CLD3AJVL.js";import{l as f,n as w,o as g,p as x,_ as S,O as j,M as k,L as M,S as O}from"./components-P9S5umDs.js";/**
+ * @remix-run/react v2.16.8
+ *
+ * Copyright (c) Remix Software Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.md file in the root directory of this source tree.
+ *
+ * @license MIT
+ */let c="positions";function _({getKey:o,...l}){let{isSpaMode:p}=f(),s=w(),m=g();x({getKey:o,storageKey:c});let u=a.useMemo(()=>{if(!o)return null;let n=o(s,m);return n!==s.key?n:null},[]);if(p)return null;let d=((n,y)=>{if(!window.history.state||!window.history.state.key){let r=Math.random().toString(32).slice(2);window.history.replaceState({key:r},"")}try{let i=JSON.parse(sessionStorage.getItem(n)||"{}")[y||window.history.state.key];typeof i=="number"&&window.scrollTo(0,i)}catch(r){console.error(r),sessionStorage.removeItem(n)}}).toString();return a.createElement("script",S({},l,{suppressHydrationWarning:!0,dangerouslySetInnerHTML:{__html:`(${d})(${JSON.stringify(c)}, ${JSON.stringify(u)})`}}))}const T=()=>[{title:e.title},{name:"description",content:e.description},{name:"keywords",content:e.keywords.join(", ")},{name:"author",content:"Haven Finance"},{name:"robots",content:"index, follow"},{property:"og:title",content:e.title},{property:"og:description",content:e.description},{property:"og:type",content:"website"},{property:"og:url",content:e.url},{name:"twitter:card",content:"summary_large_image"},{name:"twitter:title",content:e.title},{name:"twitter:description",content:e.description}],b=()=>[{rel:"preconnect",href:"https://fonts.googleapis.com"},{rel:"preconnect",href:"https://fonts.gstatic.com",crossOrigin:"anonymous"}];function E({children:o}){return t.jsxs("html",{lang:"en",children:[t.jsxs("head",{children:[t.jsx("meta",{charSet:"utf-8"}),t.jsx("meta",{name:"viewport",content:"width=device-width, initial-scale=1"}),t.jsx(k,{}),t.jsx(M,{})]}),t.jsxs("body",{children:[t.jsx(h,{children:o}),t.jsx(_,{}),t.jsx(O,{})]})]})}function N(){return t.jsx(j,{})}export{E as Layout,N as default,b as links,T as meta};
