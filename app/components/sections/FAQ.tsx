@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import { FAQ_DATA } from '../../lib/constants';
 import { cn } from '../../lib/utils';
+import EmailSignup from './EmailSignup';
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -99,47 +100,8 @@ export default function FAQ() {
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
-          <div 
-            className="inline-block p-8 rounded-3xl"
-            style={{ 
-              backgroundColor: 'var(--bg-lighter)',
-              boxShadow: '6px 6px 12px rgba(0,0,0,0.15), -3px -3px 8px var(--bg-main)'
-            }}
-          >
-            <h3 
-              className="text-xl font-semibold mb-4"
-              style={{ color: 'var(--text-header)' }}
-            >
-              Still have questions?
-            </h3>
-            <p 
-              className="text-base mb-6"
-              style={{ color: 'var(--text-body)' }}
-            >
-              Our team is here to help. Get in touch and we&apos;ll answer any questions you have.
-            </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-6 py-3 rounded-2xl font-semibold transition-all duration-200"
-              style={{ 
-                backgroundColor: 'var(--text-header)',
-                color: 'var(--bg-main)',
-                boxShadow: '4px 4px 8px rgba(0,0,0,0.2), -2px -2px 6px var(--bg-main)'
-              }}
-            >
-              Contact Support
-            </motion.button>
-          </div>
-        </motion.div>
+        {/* Email Signup */}
+        <EmailSignup />
       </div>
     </section>
   );

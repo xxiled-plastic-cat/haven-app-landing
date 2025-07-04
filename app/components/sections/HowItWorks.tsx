@@ -4,6 +4,7 @@ import {
   ArrowsRightLeftIcon, 
   TrophyIcon 
 } from '@heroicons/react/24/outline';
+import { scrollToEmailSignup } from '../../lib/utils';
 
 const steps = [
   {
@@ -156,6 +157,7 @@ export default function HowItWorks() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={scrollToEmailSignup}
             className="px-8 py-4 rounded-3xl font-semibold text-lg transition-all duration-200"
             style={{ 
               backgroundColor: 'var(--text-header)',

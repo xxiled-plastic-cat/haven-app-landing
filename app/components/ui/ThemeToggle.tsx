@@ -1,14 +1,14 @@
-import { Fragment } from 'react';
-import { Menu, Transition } from '@headlessui/react';
-import { ChevronDownIcon } from '@heroicons/react/20/solid';
-import { useTheme } from '../../hooks/useTheme';
-import { colorThemes, ThemeName } from '../../lib/themes';
+import { Fragment } from "react";
+import { Menu, Transition } from "@headlessui/react";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import { useTheme } from "../../hooks/useTheme";
+import { colorThemes, ThemeName } from "../../lib/themes";
 
 const themeDisplayNames = {
-  lightPink: 'Light Pink',
-  terracotta: 'Terracotta',
-  grey: 'Grey',
-  obsidian: 'Obsidian',
+  lightPink: "Light Pink",
+  terracotta: "Terracotta",
+  grey: "Grey",
+  obsidian: "Obsidian",
 } as const;
 
 export default function ThemeToggle() {
@@ -20,33 +20,15 @@ export default function ThemeToggle() {
         <Menu.Button
           className="w-12 h-12 rounded-full flex items-center justify-center cursor-pointer"
           style={{
-            backgroundColor: 'var(--bg-main)',
-            boxShadow: '2px 3px 4px rgba(0,0,0,0.3), -1.5px -2.5px 4px var(--bg-lighter)'
+            backgroundColor: "var(--bg-main)",
+            boxShadow:
+              "2px 3px 4px rgba(0,0,0,0.3), -1.5px -2.5px 4px var(--bg-main)",
           }}
         >
-          <div
-            className="w-11 h-11 rounded-full flex items-center justify-center"
-            style={{
-              backgroundColor: 'var(--bg-main)',
-              boxShadow: 'inset 2px 3px 4px rgba(0,0,0,0.3), inset -1.5px -2.5px 4px var(--bg-lighter)'
-            }}
-          >
-            <div
-              className="w-10 h-10 rounded-full flex items-center justify-center"
-              style={{
-                backgroundColor: 'var(--bg-darker)',
-              }}
-            >
-              <div
-                className="w-9 h-9 rounded-full flex items-center justify-center opacity-70"
-                style={{
-                  backgroundColor: 'var(--bg-main)',
-                }}
-              >
-                <ChevronDownIcon className="h-5 w-5" style={{ color: 'var(--text-header)' }} />
-              </div>
-            </div>
-          </div>
+          <ChevronDownIcon
+            className="h-5 w-5"
+            style={{ color: "var(--text-header)" }}
+          />
         </Menu.Button>
       </div>
 
@@ -59,16 +41,20 @@ export default function ThemeToggle() {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items 
+        <Menu.Items
           className="absolute right-0 mt-2 w-56 origin-top-right rounded-2xl p-1 ring-1 ring-black/5 focus:outline-none"
           style={{
-            backgroundColor: 'var(--bg-main)',
-            boxShadow: '4px 4px 10px rgba(0,0,0,0.1), -4px -4px 10px var(--bg-lighter)'
+            backgroundColor: "var(--bg-main)",
+            boxShadow: "4px 4px 10px rgba(0,0,0,0.1)",
+            
           }}
         >
           <div className="py-1">
             <div className="px-3 py-2">
-              <p className="text-sm font-medium" style={{ color: 'var(--text-header)' }}>
+              <p
+                className="text-sm font-medium"
+                style={{ color: "var(--text-header)" }}
+              >
                 {themeDisplayNames[theme]}
               </p>
             </div>
@@ -78,11 +64,13 @@ export default function ThemeToggle() {
                   <button
                     onClick={() => setTheme(key as ThemeName)}
                     className={`${
-                      active ? 'opacity-80' : ''
+                      active ? "opacity-80" : ""
                     } group flex w-full items-center rounded-xl px-3 py-2 text-sm transition-all duration-200`}
                     style={{
-                      backgroundColor: active ? 'var(--bg-lighter)' : 'transparent',
-                      color: 'var(--text-body)'
+                      backgroundColor: active
+                        ? "var(--bg-main)"
+                        : "transparent",
+                      color: "var(--text-body)",
                     }}
                   >
                     <div
@@ -99,4 +87,4 @@ export default function ThemeToggle() {
       </Transition>
     </Menu>
   );
-} 
+}

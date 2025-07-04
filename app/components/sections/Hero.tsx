@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useTheme } from '../../hooks/useTheme';
 import Button from '../ui/Button';
+import { scrollToEmailSignup } from '../../lib/utils';
 
 export default function Hero() {
   const { theme } = useTheme();
@@ -55,6 +56,7 @@ export default function Hero() {
             <Button
               size="lg"
               className="font-semibold"
+              onClick={scrollToEmailSignup}
               style={{ 
                 backgroundColor: 'var(--text-header)',
                 color: 'var(--bg-main)'
@@ -62,7 +64,7 @@ export default function Hero() {
             >
               Join the Waitlist
             </Button>
-            <Button
+            {/* <Button
               variant="secondary"
               size="lg"
               className="font-semibold"
@@ -72,7 +74,7 @@ export default function Hero() {
               }}
             >
               Learn More
-            </Button>
+            </Button> */}
           </motion.div>
         </motion.div>
 
@@ -87,7 +89,7 @@ export default function Hero() {
             <img
               src={mockupImages[theme]}
               alt="Haven mobile app mockup"
-              className="w-80 md:w-96 lg:w-[420px] h-auto max-w-full"
+              className="w-96 md:w-[480px] lg:w-[520px] h-auto max-w-full"
             />
           </div>
         </motion.div>
