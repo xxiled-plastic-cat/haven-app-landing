@@ -29,13 +29,14 @@ export default function ThemeWrapper({ children }: ThemeWrapperProps) {
 
   return (
     <div 
-      className="min-h-screen"
+      className="min-h-screen relative"
       style={{
         backgroundColor: 'var(--bg-main)',
         ...themeStyles
       }}
     >
       {children}
+
     </div>
   );
 } 

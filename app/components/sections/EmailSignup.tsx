@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { EnvelopeIcon, CheckIcon } from '@heroicons/react/24/outline';
+import { addToWaitlist } from '~/lib/supabase';
 
 export default function EmailSignup() {
   const [email, setEmail] = useState('');
@@ -18,15 +19,19 @@ export default function EmailSignup() {
 
     setStatus('loading');
     
-    // TODO: Replace with actual email signup API
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API call
+      await addToWaitlist(email);
       setStatus('success');
       setMessage('Thanks for joining our waitlist! We\'ll be in touch soon.');
       setEmail('');
-    } catch (error) {
+    } catch (error: any) {
       setStatus('error');
-      setMessage('Something went wrong. Please try again.');
+      if (error.code === '23505') {
+        setMessage('This email is already on our waitlist!');
+      } else {
+        setMessage('Something went wrong. Please try again.');
+      }
+      console.error('Error adding to waitlist:', error);
     }
   };
 
